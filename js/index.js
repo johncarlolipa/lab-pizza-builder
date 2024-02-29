@@ -86,6 +86,37 @@ function renderGlutenFreeCrust() {
 
 function renderButtons() {
   // Iteration 3: add/remove the class "active" of each `<button class="btn">`
+
+  // pepperoni
+  const pepperoniButton = document.querySelector('.btn.btn-pepperoni');
+  if (state.pepperoni) {
+    pepperoniButton.classList.add('active');
+  } else {
+    pepperoniButton.classList.remove('active');
+  }
+
+  //  mushroom
+  const mushroomButton = document.querySelector('.btn.btn-mushrooms');
+  if (state.mushrooms) {
+    mushroomButton.classList.add('active');
+  } else {
+    mushroomButton.classList.remove('active');
+  }
+
+  // green pepper
+  const greenPepperButton = document.querySelector('.btn.btn-green-peppers');
+  if (state.greenPeppers) {
+    greenPepperButton.classList.add('active');
+  } else {
+    greenPepperButton.classList.remove('active');
+  }
+
+  const sauceButton = document.querySelector('.btn.btn-sauce');
+  if (state.whiteSauce) {
+    sauceButton.classList.add('active');
+  } else {
+    sauceButton.classList.remove('active');
+  }
 }
 
 function renderPrice() {
