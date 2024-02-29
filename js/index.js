@@ -66,10 +66,22 @@ function renderGreenPeppers() {
 
 function renderWhiteSauce() {
   // Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
+  const sauceElement = document.querySelector('.sauce');
+  if (state.whiteSauce) {
+    sauceElement.classList.add('sauce-white');
+  } else {
+    sauceElement.classList.remove('sauce-white');
+  }
 }
 
 function renderGlutenFreeCrust() {
   // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
+  const crustElement = document.querySelector('.crust');
+  if (state.glutenFreeCrust) {
+    crustElement.classList.add('crust-gluten-free');
+  } else {
+    crustElement.classList.remove('crust-gluten-free');
+  }
 }
 
 function renderButtons() {
@@ -107,5 +119,13 @@ document
   });
 
 // Iteration 2: Add click event listener on `<button class="btn btn-sauce">`
+document.querySelector('.btn.btn-sauce').addEventListener('click', function () {
+  state.whiteSauce = !state.whiteSauce;
+  renderEverything();
+});
 
 // Iteration 2: Add click event listener on `<button class="btn btn-crust">`
+document.querySelector('.btn.btn-crust').addEventListener('click', function () {
+  state.glutenFreeCrust = !state.glutenFreeCrust;
+  renderEverything();
+});
